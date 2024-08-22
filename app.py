@@ -31,7 +31,7 @@ sheets_service = build('sheets', 'v4', credentials=creds)
 
 # Simulated knowledgebase
 knowledgebase = {
-    "FAQ's"
+    "FAQ's": 
     "how to change trading account currency": "If you wish to change your trading account currency, you can easily do so by opening a new trading account on our client portal at https://portal.rcgmarkets.com/. After logging in, proceed to 'Account Settings' and navigate to 'Trading Accounts.' From there, you can open a new trading account and select the currency of your choice. Please be aware that you cannot modify the currency of an existing account, but opening a new account enables you to choose your preferred currency. If you have any inquiries or require assistance, please contact us!",
     
     "how to deposit": "To deposit funds into your account, simply log in to the Client Portal using this link https://portal.rcgmarkets.com/. Once you're logged in, navigate to the 'Fund Account' section. Here, you'll see all the available deposit methods. Select your preferred method and follow the instructions to complete your deposit.",
@@ -40,7 +40,11 @@ knowledgebase = {
     
     "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",
     
-    "why was my pdf bank statement declined": "Your bank statement was declined because it does not have a stamp. Other reasons may include different names from your client portal, lack of transactions, outdated information, or a blurry image. Please provide the required documents accordingly."
+    "why was my pdf bank statement declined": "Your bank statement may be declined for several reasons: 1) It does not have a stamp. 2) It has different names from your client portal. 3) It does not have transactions (in this case, request a bank confirmation letter). 4) It is outdated (please send the most recent bank statement that is not older than three months). 5) It is blurry (kindly send the original PDF bank statement).",
+    
+    "available account types": "We offer the following account types: 1) Classic – MT4 account, 2) ECN – MT4 account, 3) Raw – MT4 account, 4) Royal 100 – MT5 account (bonus), 5) Royal cent – MT5 cent account",
+    
+    "how to change trading account password": "To change your trading account password: 1) Log in to your client portal at https://portal.rcgmarkets.com/. 2) Navigate to the 'Account Settings' tab. 3) Click on 'Change Password'. 4) Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. 5) Click 'Submit'.
 }
 
 def create_app(config_name):
@@ -113,11 +117,7 @@ def create_app(config_name):
         last_activity_time = time.time()
         
         if not messages:
-            system_message = """Here's a more concise version:
-
-# Forex Customer Service Interview Chatbot
-
-You are a frustrated RCG Markets forex customer testing their support.
+            system_message = """You are a frustrated RCG Markets forex customer testing their support.
 
 ## Core Behaviors:
 1. Start angry, use offensive language
