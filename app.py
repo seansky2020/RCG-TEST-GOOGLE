@@ -38,7 +38,7 @@ knowledgebase = {
     
     "account verification - struggling to upload (alternative methods to submit documents)": "If you're struggling to upload your documents for account verification, you can alternatively submit them by sending an email to fica@rcgmarkets.com or by using our WhatsApp platform at +27824016338. We'll assist you further from there!",
     
-    "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",,
+    "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",
     
     "why was my pdf bank statement declined": "Your bank statement was declined because it does not have a stamp. Other reasons may include different names from your client portal, lack of transactions, outdated information, or a blurry image. Please provide the required documents accordingly."
 }
