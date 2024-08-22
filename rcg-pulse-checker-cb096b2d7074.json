@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "rcg-pulse-checker",
+  "private_key_id": "cb096b2d7074a085520c791d0cc7cae05dc1adcf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC24PnseTKQ2KKi\nHnNtJYYC7+/PdA5i5dv9Rg+PPd5WOAK+0HjS+RbPtW9msw1y2ls3am18/Srnu4L2\nwaXHjGyqzAiDj8knR7qpcWPFsiCwAODe+qu4R/mCk4tgVBIL82eC8fqX2V/Ek+a/\nWI1kC2qti1dFIlcsFjerM53n16ORhXeAR1GGz5ipcZqGdAAziQQ/O6/e/H6/kbsW\nwayva/5g4WvaVYreeEcdpOMrtw4eZFQMPprj5e82HHzzLAT2ZVz0SnAlrV3OKbJ0\nBc4Yyc1MaFxRjWamvZnj0kIAkv9XKLwfNnLs4bn8hA4X7PQkBeDcBrfqSdE26EYf\njZHpTXpRAgMBAAECggEABCEiCOjBr2Cc54E9hP4/FOuQZC7624PU4FayfOmzjrSB\nZ11Iunwnu4qdbdm8Liw9DrbHVcus/4I4llQlZ1NF6Y4QNnxK2VQMJHhW0ud58nof\n7xkE7fUow/3gkffEAo4SonPOqfAdcqW4+k1zFTURdG1m4Tzsb/vpHONeUkEIb1Lk\n690mzasxaOISSDEjzFgRZ8jZOLhWceCmN2ngq2MtzTbgWlAVccvv7e8QWQO+IbPn\nF8Ft+69ba68rYrJ/to2JUkcrBmmMI2tNgbXwR7gGBx31mrcCCQRF0rc3JyLEaH5j\nt0rH/mnW4kbC7Y9cDTlGJfHiRcGcv9OlpcgejMpDQwKBgQDb+CSZaTalBvXHXr8i\n88punaa+uw2iw3O2ahoQMCM2XY3NP/gwN86zZQUHtoErvM6N9AKVaGqzViVE8i6j\nyezRZQMtBfMSJLQT6GmB6QQ52ona/pNE6JM0bdUgQR7FG89z5CXpM+WyjWDMTP6p\nFJDq7/t8JhykiGISu9nK4myqmwKBgQDU1YmBZQPgVTeM/Wxh0lmSSIiDpzH7DrKa\nPo6+Yv9XlhvYwN3QbAJ0v79DrBdTaZDK2njm/K09QGwXiH3e7iaCxOho8A5GThJr\nxQ2yHA5G0EvidUSP0cabfoQ0OeOKXmLKDxiegXQ1FYgEwdtNaQK4pRUklwQ7ZYoR\nlO4a4t7XgwKBgApSK01zbVfy6qdPH8LBE5d7GC7M0gf4Cb7eXZiy2YQcgaHGxZtl\nkvJB5CmHe6oUstBgSZq/CnqdqSQCBQQ0XkM47Rw4sj4AsN5aQlERINyiD2PSHBDY\npMeJ+70GsS3obyRt6QV3JOjqz0bmufAvAdm0JuWdWCy0JX3hiIeHdjfPAoGASXJH\nOXf6lnfR672ooTlN38VYFtaj0NeJmuDrsZfINhl/EpW79ijP0Co7fsbsZcSQSvCJ\nuGyJ/BE3PAfGKCBW+dmpukzdIDXg9X/S8hvscVOAXG3LczYZK5/FT6CKfT2FKeV7\nwXc6+varMbkUTOpoHgAaA755n2Wy985FPNH9xLECgYAIlDEqNcKNu8CdxDIB6Hue\nSF47f5hFOfun5gOGDkK0MCQ4Hg32Ug2HOD+38rEi0wY9Q26D3YAcdJnNdwO9E9Of\nha9EVd9wJwKqRd2mi6QpOicOh8/nxVU5K4sPvGMXnUTnTOT6LcFOms/EKhfrq/zA\nsS3v8KcZwcgLEITNfjDPlQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "rcg-pulse-checker-sa@rcg-pulse-checker.iam.gserviceaccount.com",
+  "client_id": "101056962103070726171",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rcg-pulse-checker-sa%40rcg-pulse-checker.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
