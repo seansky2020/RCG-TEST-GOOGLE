@@ -31,7 +31,7 @@ sheets_service = build('sheets', 'v4', credentials=creds)
 
 # Simulated knowledgebase
 knowledgebase = {
-    "FAQ's": 
+    "FAQ's"
     "how to change trading account currency": "If you wish to change your trading account currency, you can easily do so by opening a new trading account on our client portal at https://portal.rcgmarkets.com/. After logging in, proceed to 'Account Settings' and navigate to 'Trading Accounts.' From there, you can open a new trading account and select the currency of your choice. Please be aware that you cannot modify the currency of an existing account, but opening a new account enables you to choose your preferred currency. If you have any inquiries or require assistance, please contact us!",
     
     "how to deposit": "To deposit funds into your account, simply log in to the Client Portal using this link https://portal.rcgmarkets.com/. Once you're logged in, navigate to the 'Fund Account' section. Here, you'll see all the available deposit methods. Select your preferred method and follow the instructions to complete your deposit.",
@@ -40,11 +40,7 @@ knowledgebase = {
     
     "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",
     
-    "why was my pdf bank statement declined": "Your bank statement may be declined for several reasons: 1) It does not have a stamp. 2) It has different names from your client portal. 3) It does not have transactions (in this case, request a bank confirmation letter). 4) It is outdated (please send the most recent bank statement that is not older than three months). 5) It is blurry (kindly send the original PDF bank statement).",
-    
-    "available account types": "We offer the following account types: 1) Classic – MT4 account, 2) ECN – MT4 account, 3) Raw – MT4 account, 4) Royal 100 – MT5 account (bonus), 5) Royal cent – MT5 cent account",
-    
-    "how to change trading account password": "To change your trading account password: 1) Log in to your client portal at https://portal.rcgmarkets.com/. 2) Navigate to the 'Account Settings' tab. 3) Click on 'Change Password'. 4) Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. 5) Click 'Submit'.
+    "why was my pdf bank statement declined": "Your bank statement was declined because it does not have a stamp. Other reasons may include different names from your client portal, lack of transactions, outdated information, or a blurry image. Please provide the required documents accordingly."
 }
 
 def create_app(config_name):
@@ -117,39 +113,20 @@ def create_app(config_name):
         last_activity_time = time.time()
         
         if not messages:
-            system_message = """You are a frustrated RCG Markets forex customer testing their support.
+            system_message = """You are a frustrated customer interacting with RCG Markets' forex brokerage customer service. Your task is to test their knowledge and service quality using provided FAQs.
 
-## Core Behaviors:
-1. Start angry, use offensive language
-2. Become calmer over time
-3. Use conversational language
-4. Ask only FAQ question
-5. Always Keep responses short
-6. Move on if answers match FAQ
-7. Ask follow-ups if needed
-8. limit the qustions you ask from the FAQ to 2
-9. Note incorrect information
-10. End politely
-
-## Process:
-1. Begin frustrated
-2. Ask first FAQ question
-3. Check answer against FAQ
-4. Progress through all questions
-5. Adjust tone as you go
-6. End conversation politely
-
-## Language:
-- Initially offensive
-- Natural, conversational
-- Concise questions/responses
-
-## Evaluation:
-- Answer accuracy
-- FAQ completeness
-- Frustration management
-
-Start when ready, responding as the customer."""
+           Instructions:
+            1. Begin with a frustrated tone then become more understanding as the converstion progresses user offensive language in the beginning
+            2. Use natural, conversational language
+            3. Only ask the qustions in the FAQ proivded and always start with the first question
+            4. Always be short with your questions and replies
+            5. If the answers match the FAQ's Always move to the next question
+            6. Ask follow-up questions if needed
+            7. Make sure to ask all the question in the FAQ's
+            7. Note any incorrect/incomplete information
+            8. End conversations politely
+            
+            Begin the conversation when ready. Respond as the customer, awaiting the support agent's (user's) replies."""
             messages.append({"role": "system", "content": system_message})
 
         user_message = request.json['message']
