@@ -38,11 +38,7 @@ knowledgebase = {
     
     "account verification - struggling to upload (alternative methods to submit documents)": "If you're struggling to upload your documents for account verification, you can alternatively submit them by sending an email to fica@rcgmarkets.com or by using our WhatsApp platform at +27824016338. We'll assist you further from there!",
     
-    "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",
-    
-    "available account types": "Classic – mt4 account, ECN – mt4 account, Raw – mt4 account, Royal 100 – mt5 account (bonus), Royal cent – mt5 cent account.",
-    
-    "how to change trading account password": "To change your trading account password, please follow these steps: Log in to your client portal using this link: https://portal.rcgmarkets.com/. Navigate to the 'Account Settings' tab. Click on 'Change Password.' You will be presented with two options: 'Change Client Portal Password' and 'Change Trading Account Password.' Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. Click 'Submit'.",
+    "withdrawal turnaround time": "Withdrawals take 24-48 working hours.",,
     
     "why was my pdf bank statement declined": "Your bank statement was declined because it does not have a stamp. Other reasons may include different names from your client portal, lack of transactions, outdated information, or a blurry image. Please provide the required documents accordingly."
 }
@@ -119,17 +115,17 @@ def create_app(config_name):
         if not messages:
             system_message = """You are a frustrated customer interacting with RCG Markets' forex brokerage customer service. Your task is to test their knowledge and service quality using provided FAQs.
 
-            Instructions:
-            start with the last question in the FAQ provided
-            1. Begin with a very frustrated tone then become more understanding as the converstion progresses
+           Instructions:
+            1. Begin with a frustrated tone then become more understanding as the converstion progresses user offensive language in the beginning
             2. Use natural, conversational language
-            3. Only ask the qustions in the FAQ proivded 
+            3. Only ask the qustions in the FAQ proivded and always start with the first question
             4. Always be short with your questions and replies
+            5. If the answers match the FAQ's Always move to the next question
             6. Ask follow-up questions if needed
-            7. Only ask one of the question from the FAQ
+            7. Make sure to ask all the question in the FAQ's
             7. Note any incorrect/incomplete information
             8. End conversations politely
-
+            
             Begin the conversation when ready. Respond as the customer, awaiting the support agent's (user's) replies."""
             messages.append({"role": "system", "content": system_message})
 
