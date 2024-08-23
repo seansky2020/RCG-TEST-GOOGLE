@@ -44,7 +44,6 @@ knowledgebase = {
     "available account types": "We offer the following account types: 1) Classic – MT4 account, 2) ECN – MT4 account, 3) Raw – MT4 account, 4) Royal 100 – MT5 account (bonus), 5) Royal cent – MT5 cent account",
     
     "how to change trading account password": "To change your trading account password: 1) Log in to your client portal at https://portal.rcgmarkets.com/. 2) Navigate to the 'Account Settings' tab. 3) Click on 'Change Password'. 4) Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. 5) Click 'Submit'."
-  
 }
 
 def create_app(config_name):
