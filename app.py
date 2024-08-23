@@ -36,7 +36,7 @@ knowledgebase = { "FAQ's":
     
     "how to deposit"; "To deposit funds into your account, simply log in to the Client Portal using this link https://portal.rcgmarkets.com/. Once you're logged in, navigate to the 'Fund Account' section. Here, you'll see all the available deposit methods. Select your preferred method and follow the instructions to complete your deposit.",
     
-    "account verification - struggling to upload (alternative methods to submit documents)": "If you're struggling to upload your documents for account verification, you can alternatively submit them by sending an email to fica@rcgmarkets.com or by using our WhatsApp platform at +27824016338. We'll assist you further from there!",
+    "account verification - struggling to upload (alternative methods to submit documents)"; "If you're struggling to upload your documents for account verification, you can alternatively submit them by sending an email to fica@rcgmarkets.com or by using our WhatsApp platform at +27824016338. We'll assist you further from there!",
     
     "withdrawal turnaround time"; "Withdrawals take 24-48 working hours.",
     
