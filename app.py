@@ -9,7 +9,6 @@ import threading
 import time
 import logging
 from flask_cors import CORS
-
 from knowledgebase import knowledgebase
 
 # Load environment variables
