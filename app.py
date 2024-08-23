@@ -32,7 +32,7 @@ creds = service_account.Credentials.from_service_account_file(
 sheets_service = build('sheets', 'v4', credentials=creds)
 
 # Knowledgebase setup
-knowledgebase = { "FAQ's":
+knowledgebase ={ "FAQ's":
     
     "how to deposit"; "To deposit funds into your account, simply log in to the Client Portal using this link https://portal.rcgmarkets.com/. Once you're logged in, navigate to the 'Fund Account' section. Here, you'll see all the available deposit methods. Select your preferred method and follow the instructions to complete your deposit.",
     
@@ -44,7 +44,7 @@ knowledgebase = { "FAQ's":
     
     "available account types"; "We offer the following account types: 1) Classic – MT4 account, 2) ECN – MT4 account, 3) Raw – MT4 account, 4) Royal 100 – MT5 account (bonus), 5) Royal cent – MT5 cent account",
     
-    "how to change trading account password":; "To change your trading account password: 1) Log in to your client portal at https://portal.rcgmarkets.com/. 2) Navigate to the 'Account Settings' tab. 3) Click on 'Change Password'. 4) Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. 5) Click 'Submit'."
+    "how to change trading account password"; "To change your trading account password: 1) Log in to your client portal at https://portal.rcgmarkets.com/. 2) Navigate to the 'Account Settings' tab. 3) Click on 'Change Password'. 4) Select 'Change Trading Account Password' and choose the trading account for which you want to change the password. 5) Click 'Submit'."
 }
 
 
