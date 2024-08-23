@@ -8,6 +8,8 @@ import datetime
 import threading
 import time
 import logging
+from flask_cors import CORS
+from knowledgebase import knowledgebase
 
 # Load environment variables
 load_dotenv()
@@ -22,7 +24,7 @@ groq_client = Groq(api_key=os.getenv('GROQ_API_KEY'))
 # Google Sheets setup
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SERVICE_ACCOUNT_FILE = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-SPREADSHEET_ID = os.getenv('SPREADSHEET_ID')
+SPREADSHEET_ID = os.getenv('1TzEMCPgvZnVs05ERyakO37BsAiOjomIvHeSdPZoczOc')
 
 creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -30,8 +32,11 @@ sheets_service = build('sheets', 'v4', credentials=creds)
 
 
 
+# Flask app setup
 def create_app(config_name):
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder=r'C:\Users\Mpho\RCG TEST GOOGLE\template')
+    CORS(app)
+
     
     messages = []
     last_activity_time = time.time()
@@ -57,24 +62,26 @@ def create_app(config_name):
             return "Sorry, I couldn't process your request."
 
     def record_to_sheet(date, time, agent_name, transcript, assessment):
-        try:
-            sheet = sheets_service.spreadsheets()
-            values = [[date, time, agent_name, transcript, assessment]]
-            body = {'values': values}
-            result = sheet.values().append(
-                spreadsheetId=SPREADSHEET_ID, range='Sheet1',
-                valueInputOption='USER_ENTERED', body=body).execute()
-            logger.info("Recorded to sheet: %s", result)
-        except Exception as e:
-            logger.error("Error recording to sheet: %s", str(e))
+     try:
+        sheet = sheets_service.spreadsheets()
+        values = [[date, time, agent_name, transcript, assessment]]
+        body = {'values': values}
+        result = sheet.values().append(
+            spreadsheetId=SPREADSHEET_ID, range='Sheet1',
+            valueInputOption='USER_ENTERED', body=body).execute()
+        logger.info("Recorded to sheet: %s", result)
+        return "Recorded to sheet successfully"
+     except Exception as e:
+        logger.error("Error recording to sheet: %s", str(e))
+        return "Error recording to sheet"
 
     def check_timeout():
         nonlocal conversation_ended
         while not conversation_ended:
-            if time.time() - last_activity_time > 600:  # 10 minutes
+            if time.time() - last_activity_time > 60:  # 1 minutes
                 end_conversation("Timeout")
                 break
-            time.sleep(10)  # Check every 10 seconds
+            time.sleep(10)  # Check every 100 seconds
 
     def end_conversation(reason):
         nonlocal conversation_ended
@@ -105,7 +112,7 @@ def create_app(config_name):
             4. Always be short with your questions and replies
             5. If the answers match the FAQ's Always move to the next question
             6. Ask follow-up questions if needed
-            7. Make sure to ask all the questions in the FAQ's
+            7. Make sure to ask all the question in the FAQ's
             7. Note any incorrect/incomplete information
             8. End conversations politely
             
@@ -116,7 +123,9 @@ def create_app(config_name):
         logger.info("User message received: %s", user_message)
         messages.append({"role": "user", "content": user_message})
         
-        ai_response = get_ai_response(messages)
+        # Check if the user's message matches any FAQ in the knowledgebase
+        user_message_lower = user_message.lower()
+        ai_response = knowledgebase.get(user_message_lower, get_ai_response(messages))
         messages.append({"role": "assistant", "content": ai_response})
         
         return jsonify({"response": ai_response})
