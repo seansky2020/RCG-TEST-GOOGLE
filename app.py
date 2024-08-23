@@ -32,7 +32,7 @@ creds = service_account.Credentials.from_service_account_file(
 sheets_service = build('sheets', 'v4', credentials=creds)
 
 # Knowledgebase setup
-knowledgebase ={ "FAQ's":
+knowledgebase = { "FAQ's":
     
     "how to deposit"; "To deposit funds into your account, simply log in to the Client Portal using this link https://portal.rcgmarkets.com/. Once you're logged in, navigate to the 'Fund Account' section. Here, you'll see all the available deposit methods. Select your preferred method and follow the instructions to complete your deposit.",
     
